@@ -25,6 +25,10 @@ while(contador<3){
     contador += 1;
 }
 
+// destinoExiste = listaDeDestinos.includes(destino)
+
+
+
 console.log("Destino existe: ", destinoExiste);
 
 if(podeComprar && destinoExiste){
