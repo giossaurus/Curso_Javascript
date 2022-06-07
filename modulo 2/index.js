@@ -1,4 +1,4 @@
-import {Cliente} from "./Conta/Cliente.js";
+import {Cliente} from "./Cliente.js";
 import { Gerente } from "./ Funcionarios/Gerente.js";
 import { Diretor } from "./ Funcionarios/Diretor.js";
 import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
@@ -8,8 +8,13 @@ diretor.cadastrarSenha("123456")
 const gerente = new Gerente ("Ricardo", 5000, 12378945601);
 gerente.cadastrarSenha("123")
 
-SistemaAutenticacao.login(gerente, "123456789");
 
-const estaLogado = SistemaAutenticacao.login(diretor, "123456789");
+SistemaAutenticacao.login(gerente, "2378945601");
 
-console.log(estaLogado);
+const cliente = new Cliente("Lais", 78945612379, "456");
+
+const diretorEstaLogado = SistemaAutenticacao.login(diretor, "123456789");
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente, "12378945601");
+
+const clienteEstaLogado = SistemaAutenticacao.login(cliente, "456");
+console.log(clienteEstaLogado, diretorEstaLogado, gerenteEstaLogado);
